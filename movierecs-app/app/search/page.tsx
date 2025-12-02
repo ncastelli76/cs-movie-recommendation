@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+import { FetchTMDB } from '@/actions/query';
+import { FetchTMDBParams, Movie, MovieSearchResultsResponse } from '@/types/tmdb-types';
+
+
 export default async function SearchResults({
   searchParams
 }: {
@@ -7,18 +11,12 @@ export default async function SearchResults({
 }) {
   const params = await searchParams;
   const query  = params.query ?? "";
-
-  type Movie = {
-    id: number;
-    genre_ids: number[];
-    overview: string;
-    popularity: number;
-    poster_path: string;
-    release_date: string;
-    title: string;
-    vote_average: number;
-    vote_count: number;
-  };
+  const results = await FetchTMDB(
+    MovieSearchResultsResponse,{
+    method: 'search',
+    q: query,
+  });
+  return {...params, results};
 
   function cleanAndSortMovies(movies: Movie[]): Movie[] {
     const today = new Date();
@@ -49,23 +47,7 @@ export default async function SearchResults({
       vote_count: raw.vote_count ?? 0,
     }));
   }
-
-  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=1`;
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMTE2YTAxMTc4YzU2NWRjNGZkNGRlM2NjNTI3NTc2NyIsIm5iZiI6MTc2MTc2NTg5OC40NDQsInN1YiI6IjY5MDI2YTBhZjcwOWE1OTRiNWVlN2E3ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RarF4iMCJpwv3pZoJpSAdvyhrgtMWsTP597vf-_jM-A'
-    }
-  };
-
-  const res = await fetch(url, options);
-  if (!res.ok){
-    console.error("An error occurred.")
-  }
-  
-  const data = await res.json()
-  const movies = mapTmdbMovies(data.results)
+  const movies = mapTmdbMovies(results.results);
   const cleanedMovies = cleanAndSortMovies(movies)
 
   const TMDB_BASE = "https://image.tmdb.org/t/p/w1280";

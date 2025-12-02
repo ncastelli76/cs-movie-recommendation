@@ -1,24 +1,26 @@
 import {z} from 'zod';
 
 
-export type Movie = {
-    id: number;
-    genre_ids: number[];
-    overview: string;
-    popularity: number;
-    poster_path: string;
-    release_date: string;
-    title: string;
-    vote_average: number;
-    vote_count: number;
-  };
+const Movie = z.object({
+    id: z.number(),
+    genre_ids: z.array(z.number()).nullable(),
+    overview: z.string().nullable(),
+    popularity: z.number(),
+    poster_path: z.string().nullable(),
+    backdrop_path: z.string().nullable(),
+    release_date: z.string(),
+    title: z.string().nullable(),
+    original_title: z.string().nullable(),
+    vote_average: z.number().nullable(),
+    vote_count: z.number().nullable(),
+  });
 
-export type MovieSearchResultsResponse = {
-    page: number;
-    total_pages: number;
-    total_results: number;
-    results: Movie[];
-  };
+export const MovieSearchResultsResponse = z.object({
+    page: z.number(),
+    total_pages: z.number(),
+    total_results: z.number(),
+    results: z.array(Movie),
+  });
 
 export type Keyword = {
     id: number;
@@ -76,6 +78,7 @@ export const MOVIE_GENRES = {
 
 const Category = z.enum([
   'search',
+  'popular',
 ] as const);
 
 
@@ -84,7 +87,15 @@ export type SearchQuery = {
   q: string;
 };
 
-export type FetchTMDBParams = SearchQuery; //todo: add types as needed
+export type PopularQuery = {
+  method: typeof Category.enum.popular;
+};
+
+export type MovieSearchResultsResponse = z.infer<typeof MovieSearchResultsResponse>
+export type Movie = z.infer<typeof Movie>;
+export type Genre = z.infer<typeof Genre>;
+
+export type FetchTMDBParams = SearchQuery | PopularQuery; //todo: add types as needed
 
 
 

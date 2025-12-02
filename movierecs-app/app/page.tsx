@@ -1,9 +1,33 @@
 import Image from "next/image";
+import { FetchTMDB } from '@/actions/query';
+import { MovieSearchResultsResponse, FetchTMDBParams} from '@/types/tmdb-types';
 
-export default function Home() {
+
+
+type HomePageParams = Array<FetchTMDBParams & { label: string }>;
+
+const HomePage = async () => {
+  const homepageParams: HomePageParams = [
+    {
+      label: 'Popular Movies',
+      method: 'popular'
+    }
+  ];
+
+  /*const homepageContent = await Promise.all(
+    homepageParams.map(async params => {
+        const { results } = await FetchTMDB(MovieSearchResultsResponse, { ...params });
+        return { ...params, results };
+    })
+  );
+
+  const filteredContent = homepageContent.filter(
+    (content): content is NonNullable<typeof content> => content !== undefined
+  );*/
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-neutral-800">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-slate-50 dark:bg-neutral-800 sm:items-start">
+    <div className="flex min-h-screen items-center justify-center bg-slate-50 font-sans dark:bg-neutral-800">
+      <main className="flex min-h-screen w-full max-w-5xl flex-col items-center justify-between py-32 px-5 bg-slate-50 dark:bg-neutral-800 sm:items-start">
       <section className= "inner_content py-20 new_index background_11">
         <div id="media_v4" className="media discover">
             <div className="column_wrapper">
@@ -17,10 +41,16 @@ export default function Home() {
             </div>
         </div>
       </section>
-      <section className="inner_content py-20 trending"><h2>This section will have a recommendation carousel.</h2></section>
+      <section className="inner_content py-20 trending"> <h2>This section will handle the carousel.</h2>
+      
+      </section>
 
       <section className="inner_content py-20 trending no_pad"><h2>This section will have an explanation of the purpose of the site.</h2></section>
       </main>
     </div>
   );
+
+
 }
+
+export default HomePage;
