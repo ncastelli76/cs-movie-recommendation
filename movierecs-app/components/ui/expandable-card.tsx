@@ -1,5 +1,7 @@
 "use client"
 
+//https://www.badtz-ui.com/docs/components/expandable-card
+
 import * as React from "react"
 import { AnimatePresence, motion } from "motion/react"
 
