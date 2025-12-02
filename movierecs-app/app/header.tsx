@@ -8,7 +8,9 @@ export default function Header() {
       {/* Header container */}
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Website title */}
-        <h1 className="text-xl font-semibold">Title</h1>
+        <Link href="/" className="font-bold">
+                EpicMovieRecommender
+              </Link>
         {/* Navigation menu */}
         <nav className="hidden md:block">
           <ul className="flex gap-x-6">
