@@ -36,8 +36,8 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/link4" className="hover:text-gray-300">
-                Login
+              <Link href="/signup" className="hover:text-gray-300">
+                Signup/Login
               </Link>
             </li>
           </ul>

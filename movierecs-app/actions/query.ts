@@ -1,9 +1,7 @@
 'use server';
 
-import { env } from '@/lib/env';
 import { Schema } from 'zod';
 
-const { TMDB_READ_ACCESS_TOKEN } = env;
 import { FetchTMDBParams } from '@/types/tmdb-types';
 
 const BASE_URL = 'https://api.themoviedb.org/3';

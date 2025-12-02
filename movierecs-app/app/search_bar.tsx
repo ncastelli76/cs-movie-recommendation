@@ -18,23 +18,29 @@ export default function Search_bar() {
   }
 
   return(
-    <div className="bg-gray-900 text-white py-4 z-100">
-      {/* Header container */}
-    <div className="container mx-auto px-4 flex justify-between items-center">
-     <form onSubmit={handleSearch} className="flex items-center space-x-2">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="px-3 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg"
-          >
-            Search
-          </button>
-        </form></div></div>
+    <div className="bg-gray-900 text-white py-4 z-[100] shadow-lg">
+  <div className="container mx-auto px-4 flex items-center">
+    <form onSubmit={handleSearch} className="flex w-full items-center space-x-2">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="flex-grow px-3 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring focus:ring-blue-500"
+      />
+
+      <button
+        type="submit"
+        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg whitespace-nowrap"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</div>
+
+
   )
 }
+
+

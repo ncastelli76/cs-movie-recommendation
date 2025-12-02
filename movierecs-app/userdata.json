@@ -1,0 +1,16 @@
+{
+    "logged_in_user":"user1",
+    "users":[
+        {
+            "username":"user1",
+            "password":"password1",
+            "ratings":[
+            {
+                "movieid": 254,
+                "rating": 4
+            }
+                
+            ]
+        }
+    ]
+}

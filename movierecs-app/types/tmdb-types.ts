@@ -1,6 +1,5 @@
 import {z} from 'zod';
 
-
 const Movie = z.object({
     id: z.number(),
     genre_ids: z.array(z.number()).nullable(),
@@ -9,7 +8,7 @@ const Movie = z.object({
     poster_path: z.string().nullable(),
     backdrop_path: z.string().nullable(),
     release_date: z.string(),
-    title: z.string().nullable(),
+    title: z.string(),
     original_title: z.string().nullable(),
     vote_average: z.number().nullable(),
     vote_count: z.number().nullable(),
@@ -96,7 +95,3 @@ export type Movie = z.infer<typeof Movie>;
 export type Genre = z.infer<typeof Genre>;
 
 export type FetchTMDBParams = SearchQuery | PopularQuery; //todo: add types as needed
-
-
-
-

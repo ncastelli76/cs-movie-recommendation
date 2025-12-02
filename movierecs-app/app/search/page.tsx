@@ -34,6 +34,10 @@ export default async function SearchResults({
       .sort((a, b) => b.popularity - a.popularity);
   }
 
+  function rate(id:number, rating:number){
+    
+  }
+
   function mapTmdbMovies(rawMovies: any[]): Movie[] {
     return rawMovies.map((raw) => ({
       id: raw.id,
@@ -80,6 +84,41 @@ export default async function SearchResults({
                   <h2 className="text-xl font-bold">{movie.title}</h2>
                 </a>
                 <p className="text-gray-600 dark:text-gray-300 mt-2">{movie.overview}</p>
+              </div>
+              <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                Rate This Movie:
+                <div className="flex flex-wrap gap-2 mt-2">
+                  <button onClick={() => rate(1, movie.id)} className="px-2 py-1 border rounded">
+                    1
+                  </button>
+                  <button onClick={() => rate(2, movie.id)} className="px-2 py-1 border rounded">
+                    2
+                  </button>
+                  <button onClick={() => rate(3, movie.id)} className="px-2 py-1 border rounded">
+                    3
+                  </button>
+                  <button onClick={() => rate(4, movie.id)} className="px-2 py-1 border rounded">
+                    4
+                  </button>
+                  <button onClick={() => rate(5, movie.id)} className="px-2 py-1 border rounded">
+                    5
+                  </button>
+                  <button onClick={() => rate(6, movie.id)} className="px-2 py-1 border rounded">
+                    6
+                  </button>
+                  <button onClick={() => rate(7, movie.id)} className="px-2 py-1 border rounded">
+                    7
+                  </button>
+                  <button onClick={() => rate(8, movie.id)} className="px-2 py-1 border rounded">
+                    8
+                  </button>
+                  <button onClick={() => rate(9, movie.id)} className="px-2 py-1 border rounded">
+                    9
+                  </button>
+                  <button onClick={() => rate(10, movie.id)} className="px-2 py-1 border rounded">
+                    10
+                  </button>
+                </div>
               </div>
               <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
                 Average Rating: {movie.vote_average}
