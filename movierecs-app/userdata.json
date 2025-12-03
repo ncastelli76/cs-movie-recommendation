@@ -1,16 +1,101 @@
 {
-    "logged_in_user":"user1",
-    "users":[
+  "logged_in_user": null,
+  "users": [
+    {
+      "username": "user1",
+      "password": "password1",
+      "ratings": [
         {
-            "username":"user1",
-            "password":"password1",
-            "ratings":[
-            {
-                "movieid": 254,
-                "rating": 4
-            }
-                
-            ]
+          "movieid": 254,
+          "rating": 10
         }
-    ]
+      ]
+    },
+    {
+      "username": "yoyo",
+      "password": "yoyo",
+      "ratings": [
+        {
+          "movieid": 11036,
+          "rating": 4
+        },
+        {
+          "movieid": 199615,
+          "rating": 8
+        },
+        {
+          "movieid": 24428,
+          "rating": 9
+        },
+        {
+          "movieid": 275663,
+          "rating": 2
+        },
+        {
+          "movieid": 9320,
+          "rating": 1
+        },
+        {
+          "movieid": 14609,
+          "rating": 1
+        },
+        {
+          "movieid": 65591,
+          "rating": 1
+        },
+        {
+          "movieid": 392031,
+          "rating": 1
+        },
+        {
+          "movieid": 685795,
+          "rating": 1
+        },
+        {
+          "movieid": 40081,
+          "rating": 1
+        },
+        {
+          "movieid": 63441,
+          "rating": 1
+        },
+        {
+          "movieid": 14613,
+          "rating": 2
+        },
+        {
+          "movieid": 1108354,
+          "rating": 1
+        },
+        {
+          "movieid": 257346,
+          "rating": 1
+        },
+        {
+          "movieid": 1154598,
+          "rating": 4
+        },
+        {
+          "movieid": 99861,
+          "rating": 8
+        },
+        {
+          "movieid": 299536,
+          "rating": 9
+        },
+        {
+          "movieid": 299534,
+          "rating": 9
+        },
+        {
+          "movieid": 518293,
+          "rating": 1
+        },
+        {
+          "movieid": 11868,
+          "rating": 8
+        }
+      ]
+    }
+  ]
 }
