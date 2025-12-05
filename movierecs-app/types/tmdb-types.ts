@@ -1,17 +1,17 @@
 import {z} from 'zod';
 
 const Movie = z.object({
-    id: z.number(),
-    genre_ids: z.array(z.number()).nullable(),
-    overview: z.string().nullable(),
-    popularity: z.number(),
-    poster_path: z.string().nullable(),
-    backdrop_path: z.string().nullable(),
-    release_date: z.string(),
-    title: z.string(),
-    original_title: z.string().nullable(),
-    vote_average: z.number().nullable(),
-    vote_count: z.number().nullable(),
+    id: z.number(),                                     // Yes
+    genre_ids: z.array(z.number()).nullable(),          // Yes 
+    overview: z.string().nullable(),                    //
+    popularity: z.number(),                             // Yes
+    poster_path: z.string().nullable(),                 //
+    backdrop_path: z.string().nullable(),               //
+    release_date: z.string(),                           //
+    title: z.string(),                                  //
+    original_title: z.string().nullable(),              // 
+    vote_average: z.number().nullable(),                // Yes
+    vote_count: z.number().nullable(),                  // Yes
   });
 
 export const MovieSearchResultsResponse = z.object({

@@ -26,7 +26,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
       router.push(`/signup?redirect=${encodeURIComponent(`/search?query=${movie.title}`)}`);
       return
     }
-    await rate(v, movie.id);
+    await rate(v, movie);
     setMyRating(v);
   }
 

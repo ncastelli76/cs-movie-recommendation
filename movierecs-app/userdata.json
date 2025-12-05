@@ -25,7 +25,7 @@
         },
         {
           "movieid": 24428,
-          "rating": 9
+          "rating": 10
         },
         {
           "movieid": 275663,
@@ -69,11 +69,11 @@
         },
         {
           "movieid": 257346,
-          "rating": 1
+          "rating": 2
         },
         {
           "movieid": 1154598,
-          "rating": 4
+          "rating": 3
         },
         {
           "movieid": 99861,
@@ -81,11 +81,11 @@
         },
         {
           "movieid": 299536,
-          "rating": 9
+          "rating": 10
         },
         {
           "movieid": 299534,
-          "rating": 9
+          "rating": 10
         },
         {
           "movieid": 518293,
@@ -94,6 +94,14 @@
         {
           "movieid": 11868,
           "rating": 8
+        },
+        {
+          "movieid": 505642,
+          "rating": 10
+        },
+        {
+          "movieid": 703398,
+          "rating": 1
         }
       ]
     }

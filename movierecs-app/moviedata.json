@@ -1,0 +1,87 @@
+[
+  {
+    "id": 299536,
+    "genre_ids": [
+      12,
+      28,
+      878
+    ],
+    "overview": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
+    "popularity": 19.7197,
+    "poster_path": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+    "backdrop_path": "/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
+    "release_date": "2018-04-25",
+    "title": "Avengers: Infinity War",
+    "original_title": "Avengers: Infinity War",
+    "vote_average": 8.235,
+    "vote_count": 31180
+  },
+  {
+    "id": 299534,
+    "genre_ids": [
+      12,
+      878,
+      28
+    ],
+    "overview": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+    "popularity": 12.8451,
+    "poster_path": "/bR8ISy1O9XQxqiy0fQFw2BX72RQ.jpg",
+    "backdrop_path": "/9wXPKruA6bWYk2co5ix6fH59Qr8.jpg",
+    "release_date": "2019-04-24",
+    "title": "Avengers: Endgame",
+    "original_title": "Avengers: Endgame",
+    "vote_average": 8.237,
+    "vote_count": 26968
+  },
+  {
+    "id": 24428,
+    "genre_ids": [
+      878,
+      28,
+      12
+    ],
+    "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+    "popularity": 41.2137,
+    "poster_path": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+    "backdrop_path": "/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
+    "release_date": "2012-04-25",
+    "title": "The Avengers",
+    "original_title": "The Avengers",
+    "vote_average": 7.867,
+    "vote_count": 34265
+  },
+  {
+    "id": 257346,
+    "genre_ids": [
+      16,
+      878,
+      28
+    ],
+    "overview": "When the Punisher takes out a black-market weapons dealer, he stumbles upon a far-reaching terrorist plot devised by a group known as Leviathan.",
+    "popularity": 4.895,
+    "poster_path": "/wJcyYVRPZDOZOD2w0r2R6wuZqqN.jpg",
+    "backdrop_path": "/vqQhjCeXbGDz8IeB27IPk0alfKA.jpg",
+    "release_date": "2014-04-19",
+    "title": "Avengers Confidential: Black Widow & Punisher",
+    "original_title": "アベンジャーズ コンフィデンシャル：ブラック・ウィドウ ＆ パニッシャー",
+    "vote_average": 6.364,
+    "vote_count": 284
+  },
+  {
+    "id": 1154598,
+    "genre_ids": [
+      16,
+      28,
+      10751
+    ],
+    "overview": "The Avengers gather to celebrate their latest victory, but their celebration is quickly interrupted by the mysterious disappearance of Black Widow's father, Red Guardian. As the Avengers investigate, they discover that Red Guardian isn't the only one missing when they meet a dangerous new foe quite unlike anything they've ever encountered before.",
+    "popularity": 3.7449,
+    "poster_path": "/rDzig50dj7VpLwJ7SThbamETK1G.jpg",
+    "backdrop_path": "/oFSQEG1lJTTISj3QKB7cJ9ANkFw.jpg",
+    "release_date": "2023-10-26",
+    "title": "LEGO Marvel Avengers: Code Red",
+    "original_title": "LEGO Marvel Avengers: Code Red",
+    "vote_average": 6.507,
+    "vote_count": 143
+  }
+]
