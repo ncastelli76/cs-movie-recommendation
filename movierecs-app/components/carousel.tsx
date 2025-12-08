@@ -2,7 +2,7 @@
 'use client';
 //Takes a list of movies and displays them in a horizontal carousel
 import React from 'react';
-import { Movie, MovieSearchResultsResponse } from '@/types/tmdb-types';
+import { ExternalQueryResponse, Movie, MovieSearchResultsResponse } from '@/types/tmdb-types';
 import Image from 'next/image';
 import { FetchTMDB } from '@/actions/query';
 import { ExpandableCard } from './ui/expandable-card';
@@ -17,29 +17,9 @@ type CarouselItemsProps = {
   movies: MovieSearchResultsResponse['results'];
 };
 
-type SliderState = {
-    content: MovieSearchResultsResponse['results'];
-    pages: number;
-    currentPage: number;
-    maxPage: number;
-    tileCountPerPage: number;
-    isAnimating: boolean;
-};
 
-type SliderActions = {
-    setCurrentPage: (currentPage: number) => void;
-    setIsAnimating: (isAnimating: boolean) => void;
-}
 
 const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
-    //const [sliderState, setSliderState] = React.useState<SliderState>({
-    //    content: movies || [],
-    //    pages: 0,
-    //    currentPage: 1,
-    //    maxPage: 0,
-    //    tileCountPerPage: 5,
-    //    isAnimating: false,
-    //});
 
       const [myRating, setMyRating] = useState<number | null>(null);
       const router = useRouter()
@@ -83,7 +63,7 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
 
     return(
         <div><h2 className="carousel-header mb-4 text-2xl font-bold">{title}</h2>
-        <div className="carousel rounded-box">
+        <div className="carousel rounded-box align-items align-content">
             {cleanedMovies.map((movie) => (
                 <div className="carousel-item" key={movie.id}>
                 <ExpandableCard title={movie.title} src={TMDB_IMAGE_BASE + movie.poster_path} description={movie.release_date}>
@@ -95,7 +75,7 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
                                 key={v}
                                 onClick={() => handleRate(v, movie)}
                                 className={`
-                                px-2 w-8 py-1 rounded border text-center
+                                px-1 w-5.2 py-0.5 rounded border text-center
                                 ${myRating === v 
                                     ? "bg-yellow-400 text-black border-yellow-500" 
                                     : "bg-gray-600 text-white"
@@ -107,6 +87,11 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
                             ))}
                         </div>
                         </div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                        <p>Rated <span className="font-bold text-sm dark:text-yellow-300">{Number(movie.vote_average?.toPrecision(2))*10} %</span> by users</p>
+                        <p>Total Times Rated: {movie.vote_count}</p>
+                        <p>Release Date: {movie.release_date}</p>
+                    </div>
                     {movie.overview}</ExpandableCard>
                 </div>
             ))}

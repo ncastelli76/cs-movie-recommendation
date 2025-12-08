@@ -37,7 +37,7 @@ Retrieved 2025-12-08, License - CC BY-SA 4.0
 */
 
 .carousel {
-    max-width: 1000px;
+    max-width: 85vw;
     max-height: 400px;
     white-space: nowrap;
     position: relative;
@@ -50,7 +50,6 @@ Retrieved 2025-12-08, License - CC BY-SA 4.0
     float: none;
     padding: 1px;
     padding-bottom: 5px;
-    max-width: 300px;
     zoom: 0.95;
 }
 
@@ -64,4 +63,15 @@ Retrieved 2025-12-08, License - CC BY-SA 4.0
 .carousel-header {
     padding: 20px;
 
+}
+
+.inner_content.new_index.background_11 {
+  background-image: url('/background_11.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
 }

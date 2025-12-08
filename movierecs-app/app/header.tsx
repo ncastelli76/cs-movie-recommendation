@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getLoggedInUser, logOut } from "@/actions/db";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
 
 export function UserMenuItem() {
   const [username, setUsername] = useState<string | null>(null);
@@ -29,16 +30,17 @@ export function UserMenuItem() {
 
   if (!username) return (
     <li>
-      <Link href="/signup" className="hover:text-gray-300">
+      <button onClick={() => router.push('/login')}
+      type = "button" className = "bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-bold py-1 px-4 rounded">
         Login/Signup
-      </Link>
+      </button>
     </li>
   )
   return (
     <li>
       <button
         onClick={handleLogout}
-        className="hover:text-gray-300"
+        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-1 px-4 rounded"
       >
         {username} (Logout)
       </button>
@@ -51,31 +53,34 @@ export default function Header() {
     <header className="bg-neutral-900 text-white py-4 sticky top-0 z-50">
       {/* Header container */}
       <div className="container mx-auto px-4 flex justify-between items-center">
+        <div className="flex align-items items-left">
+        <Image src="/popcorn.svg" alt="Logo" width={30} height={30} />
         {/* Website title */}
-        <Link href="/" className="font-bold">
-          EpicMovieRecommender
+        <Link href="/" className="font-bold px-2 text-2xl">
+          EMovieRecs
         </Link>
+        </div>
         {/* Navigation menu */}
-        <nav className="hidden md:block">
+        <nav className="hidden md:block justify-between items-right">
           <ul className="flex gap-x-6">
             {/* Navigation links */}
             <li>
-              <Link href="/" className="hover:text-gray-300">
+              <Link href="/" className="hover:text-gray-300 py-1">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/search?query=Avengers" className="hover:text-gray-300">
+              <Link href="/search?query=Avengers" className="hover:text-gray-300 py-1">
                 Avengers (examples)
               </Link>
             </li>
             <li>
-              <Link href="/search?query=The%20Godfather" className="hover:text-gray-300">
+              <Link href="/search?query=The%20Godfather" className="hover:text-gray-300 py-1">
                 The Godfather (examples)
               </Link>
             </li>
             <li>
-              <Link href="/search?query=The%20Notebook" className="hover:text-gray-300">
+              <Link href="/search?query=The%20Notebook" className="hover:text-gray-300 py-1">
                 The Notebook (examples)
               </Link>
             </li>

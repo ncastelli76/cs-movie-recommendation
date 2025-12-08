@@ -21,6 +21,15 @@ export const MovieSearchResultsResponse = z.object({
     results: z.array(Movie),
   });
 
+export const ExternalQueryResponse = z.object({
+    id: z.number(),
+    imdb_id: z.string(),
+    wikidata_id: z.string().nullable(),
+    facebook_id: z.string().nullable(),
+    instagram_id: z.string().nullable(),
+    twitter_id: z.string().nullable(),
+  });
+
 export type Keyword = {
     id: number;
     name: string;
@@ -79,6 +88,7 @@ const Category = z.enum([
   'search',
   'popular',
   'trending',
+  'external_ids',
 ] as const);
 
 
@@ -95,8 +105,18 @@ export type TrendingQuery = {
   method: typeof Category.enum.trending;
 };
 
+export type ExternalQuery = {
+  method: typeof Category.enum.external_ids;
+  movie_id: number;
+}
+
+export type ExternalQueryResponse = z.infer<typeof ExternalQueryResponse>;
+
 export type MovieSearchResultsResponse = z.infer<typeof MovieSearchResultsResponse>
 export type Movie = z.infer<typeof Movie>;
 export type Genre = z.infer<typeof Genre>;
 
-export type FetchTMDBParams = SearchQuery | PopularQuery | TrendingQuery; //todo: add types as needed
+export type FetchTMDBParams = SearchQuery 
+| PopularQuery 
+| TrendingQuery 
+| ExternalQuery; //todo: add types as needed

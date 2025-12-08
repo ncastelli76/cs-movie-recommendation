@@ -91,7 +91,7 @@ export function ExpandableCard({
                   />
                 </div>
               </motion.div>
-              <div className="relative h-full before:fixed before:inset-x-0 before:bottom-0 before:z-50 before:h-[70px] before:bg-gradient-to-t before:from-zinc-50 dark:before:from-zinc-950">
+              <div className="relative h-full before:fixed before:from-zinc-50 dark:before:from-zinc-950">
                 <div className="flex h-auto items-start justify-between p-8">
                   <div>
                     <motion.p
@@ -158,7 +158,7 @@ export function ExpandableCard({
         layoutId={`card-${title}-${id}`}
         onClick={() => setActive(true)}
         className={cn(
-          "flex cursor-pointer flex-col items-center justify-between rounded-2xl",
+          "flex cursor-pointer flex-col items-center justify-between rounded-2xl border border-gray-200/70 bg-zinc-50 p-3 shadow-sm dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-none",
           className
         )}
       >
@@ -167,7 +167,7 @@ export function ExpandableCard({
             <img
               src={src}
               alt={title}
-              className="h-56 w-64 rounded-lg object-cover object-center"
+              className="h-80 w-55 rounded-lg object-cover object-center"
             />
           </motion.div>
           <div className="flex items-center justify-between">
