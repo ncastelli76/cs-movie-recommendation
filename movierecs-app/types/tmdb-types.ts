@@ -78,7 +78,9 @@ export const MOVIE_GENRES = {
 const Category = z.enum([
   'search',
   'popular',
+  'trending',
 ] as const);
+
 
 
 export type SearchQuery = {
@@ -89,9 +91,12 @@ export type SearchQuery = {
 export type PopularQuery = {
   method: typeof Category.enum.popular;
 };
+export type TrendingQuery = {
+  method: typeof Category.enum.trending;
+};
 
 export type MovieSearchResultsResponse = z.infer<typeof MovieSearchResultsResponse>
 export type Movie = z.infer<typeof Movie>;
 export type Genre = z.infer<typeof Genre>;
 
-export type FetchTMDBParams = SearchQuery | PopularQuery; //todo: add types as needed
+export type FetchTMDBParams = SearchQuery | PopularQuery | TrendingQuery; //todo: add types as needed

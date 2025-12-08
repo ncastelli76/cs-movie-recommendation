@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { FetchTMDB } from '@/actions/query';
-import { MovieSearchResultsResponse, FetchTMDBParams} from '@/types/tmdb-types';
+import { Movie, MovieSearchResultsResponse, FetchTMDBParams} from '@/types/tmdb-types';
 import Search_bar from "./search_bar";
+import CarouselItems from "@/components/carousel";
 
 
 
@@ -12,23 +13,24 @@ const HomePage = async () => {
     {
       label: 'Popular Movies',
       method: 'popular'
-    }
+    },
+    {
+      label: 'Trending Today',
+      method: 'trending'
+    },
   ];
+  
 
-  /*const homepageContent = await Promise.all(
+  const homepageContent = await Promise.all(
     homepageParams.map(async params => {
         const { results } = await FetchTMDB(MovieSearchResultsResponse, { ...params });
         return { ...params, results };
     })
   );
 
-  const filteredContent = homepageContent.filter(
-    (content): content is NonNullable<typeof content> => content !== undefined
-  );*/
-
   return (
     <div>
-      <div className="fixed top-14 left-0 right-0">
+      <div className="fixed top-14 left-0 right-0 z-50">
       <Search_bar />
       </div>
       <div className="flex min-h-screen items-center justify-center bg-slate-50 font-sans dark:bg-neutral-800">
@@ -46,8 +48,9 @@ const HomePage = async () => {
               </div>
           </div>
         </section>
-        <section className="inner_content py-20 trending"> <h2>This section will handle the carousel.</h2>
-
+        <section className="inner_content z-20">
+        <CarouselItems title = {homepageContent[0].label} movies={homepageContent[0].results} />
+        <CarouselItems title = {homepageContent[1].label} movies={homepageContent[1].results} />
         </section>
 
         <section className="inner_content py-20 trending no_pad"><h2>This section will have an explanation of the purpose of the site.</h2></section>

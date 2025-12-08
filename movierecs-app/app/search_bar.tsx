@@ -18,7 +18,7 @@ export default function Search_bar() {
   }
 
   return(
-    <div className="bg-gray-900 text-white py-4 z-[100] shadow-lg">
+    <div className="search-bar bg-gray-900 text-white py-4 z-[100] shadow-lg">
   <div className="container mx-auto px-4 flex items-center">
     <form onSubmit={handleSearch} className="flex w-full items-center space-x-2">
       <input

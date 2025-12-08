@@ -17,7 +17,8 @@ const createUrl = (params: FetchTMDBParams) => {
             url.searchParams.append('language', 'en-US');
             url.searchParams.append('page', '1');
             return url.href;
-
+        case 'trending':
+            return `${BASE_URL}/trending/movie/day?language=en-US&page=1`;
         default:
             throw new Error(`Unknown method`);
     }

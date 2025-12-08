@@ -29,3 +29,39 @@ body {
   padding-top:5rem;
   padding-bottom:5rem
 }
+
+/*
+Source - https://stackoverflow.com/a
+Posted by John_C, modified by community. See post 'Timeline' for change history
+Retrieved 2025-12-08, License - CC BY-SA 4.0
+*/
+
+.carousel {
+    max-width: 1000px;
+    max-height: 400px;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel div {
+    float: none;
+    padding: 1px;
+    padding-bottom: 5px;
+    max-width: 300px;
+    zoom: 0.95;
+}
+
+.carousel-item {
+    
+    float: none;
+    display: inline-block;
+    text-wrap: wrap;
+}
+
+.carousel-header {
+    padding: 20px;
+
+}
