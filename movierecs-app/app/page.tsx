@@ -42,7 +42,7 @@ const HomePage = async () => {
               <div className="content_wrapper wrap">
                   <div className="title p-20">
                       <h1 className="mb-4 text-4xl font-bold">EMovieRecs</h1>
-                      <h2 className="mb-4 text-2xl font-bold">A movie recommendation client</h2>
+                      <h2 className="mb-4 text-2xl font-bold">A movie recommendation software</h2>
                   </div>
                   <div className="search"></div>
               </div>
@@ -51,11 +51,14 @@ const HomePage = async () => {
         </section>
         <section className="inner_content px-32 z-20">
         <CarouselItems title = {homepageContent[0].label} movies={homepageContent[0].results} />
+        <div className="hr solid my-8"/>
         <CarouselItems title = {homepageContent[1].label} movies={homepageContent[1].results} />
+        <div className="hr solid my-8"/>
         </section>
-
-        <section className="inner-content w-full h-[70px] bg-gradient-to-t from:zinc-50 dark:from-zinc-950 to-transparent"></section>
-        <section className="inner_content w-full py-20 trending px-36 bg-zinc-50 dark:bg-zinc-950"><h2>This section will have an explanation of the purpose of the site.</h2></section>
+        <section className="inner_content w-full py-5 mb-20 trending px-36 bg-slate-50 dark:bg-neutral-800">
+          <div className="flex h-10 items-center gap-2"><span className="font-light text-primary/70 text-sm">Made with</span><a href="https://nextjs.org/" target="_blank" rel="noreferrer"><Image src="/next.svg" alt="Next.JS" width="100" height="0"/></a></div>
+          <div className="flex h-10 items-center gap-2"><span className="font-light text-primary/70 text-sm">Data provided by</span><a href="https://developer.themoviedb.org/docs/getting-started" target="_blank" rel="noreferrer"><Image alt="The Movie Database Logo" width="100" height="0" src="/tmdb-logo.svg" /></a></div>
+        </section>
         </main>
       </div>
       <div className="fixed bottom-0 left-0 right-0 z-50">

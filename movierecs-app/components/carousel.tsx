@@ -62,7 +62,7 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
         }, [movie.id]);}}
 
     return(
-        <div><h2 className="carousel-header mb-4 text-2xl font-bold">{title}</h2>
+        <div><h2 className="carousel-header mt-4 text-2xl font-bold">{title}</h2>
         <div className="carousel rounded-box align-items align-content">
             {cleanedMovies.map((movie) => (
                 <div className="carousel-item" key={movie.id}>

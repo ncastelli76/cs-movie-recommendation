@@ -18,7 +18,7 @@ export default function Search_bar() {
   }
 
   return(
-    <div className="search-bar bg-gray-900 text-white py-4 z-[100] shadow-lg">
+    <div className="search-bar bg-zinc-800 text-white py-4 z-[100] shadow-lg">
   <div className="container mx-auto px-4 flex items-center">
     <form onSubmit={handleSearch} className="flex w-full items-center space-x-2">
       <input
@@ -26,7 +26,7 @@ export default function Search_bar() {
         placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="flex-grow px-3 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring focus:ring-blue-500"
+        className="flex-grow px-3 py-2 rounded-lg bg-zinc-900/50 text-white focus:outline-none focus:ring focus:ring-neutral-600"
       />
 
       <button

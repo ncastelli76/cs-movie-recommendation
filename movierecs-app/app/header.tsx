@@ -50,7 +50,7 @@ export function UserMenuItem() {
 
 export default function Header() {
   return (
-    <header className="bg-neutral-900 text-white py-4 sticky top-0 z-50">
+    <header className="bg-zinc-900 text-white py-4 sticky top-0 z-50">
       {/* Header container */}
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex align-items items-left">

@@ -88,6 +88,7 @@ const Category = z.enum([
   'search',
   'popular',
   'trending',
+  'keywords',
   'external_ids',
 ] as const);
 
@@ -110,6 +111,11 @@ export type ExternalQuery = {
   movie_id: number;
 }
 
+export type KeywordQuery= {
+  movie_id: number;
+  method: typeof Category.enum.keywords;
+}
+
 export type ExternalQueryResponse = z.infer<typeof ExternalQueryResponse>;
 
 export type MovieSearchResultsResponse = z.infer<typeof MovieSearchResultsResponse>
@@ -119,4 +125,5 @@ export type Genre = z.infer<typeof Genre>;
 export type FetchTMDBParams = SearchQuery 
 | PopularQuery 
 | TrendingQuery 
-| ExternalQuery; //todo: add types as needed
+| ExternalQuery
+| KeywordQuery; //todo: add types as needed
