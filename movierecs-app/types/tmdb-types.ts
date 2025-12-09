@@ -1,8 +1,26 @@
 import {z} from 'zod';
 
-const Movie = z.object({
+const GenreObject = z.object({
+  id: z.number(),
+  name: z.string()
+})
+
+export const MovieSearchResponse = z.object({
     id: z.number(),                                     // Yes
-    genre_ids: z.array(z.number()).nullable(),          // Yes 
+    overview: z.string().nullable(),                    //
+    popularity: z.number(),                             // Yes
+    poster_path: z.string().nullable(),                 //
+    backdrop_path: z.string().nullable(),               //
+    release_date: z.string(),                           //
+    title: z.string(),                                  //
+    original_title: z.string().nullable(),              // 
+    vote_average: z.number().nullable(),                // Yes
+    vote_count: z.number().nullable(),                  // Yes
+    genres: z.array(GenreObject).nullable(),
+});
+
+export const Movie = z.object({
+    id: z.number(),                                     // Yes         // Yes 
     overview: z.string().nullable(),                    //
     popularity: z.number(),                             // Yes
     poster_path: z.string().nullable(),                 //
@@ -90,7 +108,10 @@ const Category = z.enum([
   'trending',
   'keywords',
   'external_ids',
+  'movie_id'
 ] as const);
+
+export type HomePageParams = Array<FetchTMDBParams & { label: string }>;
 
 
 
@@ -111,6 +132,11 @@ export type ExternalQuery = {
   movie_id: number;
 }
 
+export type IDQuery = {
+  method: typeof Category.enum.movie_id;
+  movie_id: number;
+}
+
 export type KeywordQuery= {
   movie_id: number;
   method: typeof Category.enum.keywords;
@@ -119,11 +145,16 @@ export type KeywordQuery= {
 export type ExternalQueryResponse = z.infer<typeof ExternalQueryResponse>;
 
 export type MovieSearchResultsResponse = z.infer<typeof MovieSearchResultsResponse>
-export type Movie = z.infer<typeof Movie>;
+export type Movie = z.infer<typeof Movie | typeof MovieSearchResponse>;
 export type Genre = z.infer<typeof Genre>;
+
+
+export type MovieIDParams = Array<FetchTMDBParams>;
+
 
 export type FetchTMDBParams = SearchQuery 
 | PopularQuery 
 | TrendingQuery 
 | ExternalQuery
-| KeywordQuery; //todo: add types as needed
+| KeywordQuery
+| IDQuery; //todo: add types as needed

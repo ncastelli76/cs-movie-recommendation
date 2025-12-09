@@ -30,7 +30,7 @@ export function UserMenuItem() {
 
   if (!username) return (
     <li>
-      <button onClick={() => router.push('/login')}
+      <button onClick={() => router.push('/signup')}
       type = "button" className = "bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-bold py-1 px-4 rounded">
         Login/Signup
       </button>

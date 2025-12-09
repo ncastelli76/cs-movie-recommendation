@@ -14,7 +14,7 @@ const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w1280";
 
 type CarouselItemsProps = {
   title?: string;
-  movies: MovieSearchResultsResponse['results'];
+  movies: Movie[];
 };
 
 
@@ -28,7 +28,6 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
       async function handleRate(v: number, movie: Movie){
         const user = await getLoggedInUser()
         if (!user){
-          router.push(`/signup?redirect=${encodeURIComponent(`/search?query=${movie.title}`)}`);
           return
         }
         await rate(v, movie);

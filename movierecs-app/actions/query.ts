@@ -21,6 +21,8 @@ const createUrl = (params: FetchTMDBParams) => {
             return `${BASE_URL}/trending/movie/day?language=en-US&page=1`;
         case 'external_ids':
             return `${BASE_URL}/movie/${params.movie_id}/external_ids`;
+        case 'movie_id':
+            return `${BASE_URL}/movie/${params.movie_id}?language=en-US`;
         default:
             throw new Error(`Unknown method`);
     }
