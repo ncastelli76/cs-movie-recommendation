@@ -50,15 +50,10 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
   }
 
   const cleanedMovies = cleanAndSortMovies(movies)
-        for(var movie of cleanedMovies){
-        if (movie != null) {
-        useEffect(() => {
-            async function load() {
-            const r = await getUserRating(movie.id);
-            if (r) setMyRating(r.rating);
-            }
-            load();
-        }, [movie.id]);}}
+
+  //TODO: HANDLE ALREADY RATED MOVIES IN A WAY THAT DOESNT CAUSE A LOGOUT TO KILL THE PROGRAM
+        
+
 
     return(
         <div><h2 className="carousel-header mt-4 text-2xl font-bold">{title}</h2>

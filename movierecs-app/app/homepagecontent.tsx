@@ -3,14 +3,21 @@ import { FetchTMDB } from '@/actions/query';
 import { Movie, MovieSearchResultsResponse, FetchTMDBParams, MovieIDParams, HomePageParams} from '@/types/tmdb-types';
 import Search_bar from "./search_bar";
 import CarouselItems from "@/components/carousel";
+import { getLoggedInUser} from "@/actions/db";
 
 
-
-
-const HomePage = async () => {
-
+var username
+export async function CarouselParams() {
+    try{
+        const user = await getLoggedInUser()
+        username = user
+    }
+    catch{
+        username = null
+    }
+    if(!username){
     const homepageParams: HomePageParams = [
-    {
+        {
       label: 'Popular Movies',
       method: 'popular'
     },
@@ -20,26 +27,47 @@ const HomePage = async () => {
     },
   ];
   const homepageContent = await Promise.all(
-    
     homepageParams.map(async params => {
         const { results } = await FetchTMDB(MovieSearchResultsResponse, { ...params });
         return { ...params, results };
     })
   );
-  //TODO:if logged in, show personalized recommendations instead of popular movies
-      const movieIDs: number[] = [
+  return(
+        <section className="inner_content px-32 z-20">
+        <CarouselItems title = {homepageContent[0].label} movies={homepageContent[0].results} />
+        <div className="hr solid my-8"/>
+        <CarouselItems title = {homepageContent[1].label} movies={homepageContent[1].results} />
+        <div className="hr solid my-8"/>
+        </section>
+  )
+    }
+    else{
+    //TODO:if logged in, show personalized recommendations instead of popular movies
+    const movieIDs: number[] = [
         533533, 
         1084242, 
         1083637]; //THIS IS A TOY LIST OF IDS FOR EXAMPLE PURPOSES
 
-  const contentByIDs = await Promise.all(
-    //TODO:if logged in, show personalized recommendations instead of popular movies
-    movieIDs.map(async id => {
-        const output = await FetchTMDB(Movie, {method: 'movie_id', movie_id: id})
-        return output;
-    })
-  );
+    const recommendedContent = await Promise.all(
+        movieIDs.map(async id => {
+            const output = await FetchTMDB(Movie, {method: 'movie_id', movie_id: id})
+            return output;
+        })
+    );
+      return(
+        <section className="inner_content px-32 z-20">
+        <CarouselItems title = {"Recommended for you"} movies={recommendedContent} />
+        <div className="hr solid my-8"/>
+        </section>
+  )
 
+    }
+}
+
+
+const HomePage = async () => {
+
+    
   return (
     <div>
       <div className="fixed top-14 left-0 right-0 z-50">
@@ -60,12 +88,7 @@ const HomePage = async () => {
               </div>
           </div>
         </section>
-        <section className="inner_content px-32 z-20">
-        <CarouselItems title = {homepageContent[0].label} movies={contentByIDs} />
-        <div className="hr solid my-8"/>
-        <CarouselItems title = {homepageContent[1].label} movies={contentByIDs} />
-        <div className="hr solid my-8"/>
-        </section>
+        <CarouselParams />
         <section className="inner_content w-full py-5 mb-20 trending px-36 bg-slate-50 dark:bg-neutral-800">
           <div className="flex h-10 items-center gap-2"><span className="font-light text-primary/70 text-sm">Made with</span><a href="https://nextjs.org/" target="_blank" rel="noreferrer"><Image src="/next.svg" alt="Next.JS" width="100" height="0"/></a></div>
           <div className="flex h-10 items-center gap-2"><span className="font-light text-primary/70 text-sm">Data provided by</span><a href="https://developer.themoviedb.org/docs/getting-started" target="_blank" rel="noreferrer"><Image alt="The Movie Database Logo" width="100" height="0" src="/tmdb-logo.svg" /></a></div>
