@@ -3,7 +3,7 @@ import { FetchTMDB } from '@/actions/query';
 import { Movie, MovieSearchResultsResponse, FetchTMDBParams, MovieIDParams, HomePageParams} from '@/types/tmdb-types';
 import Search_bar from "./search_bar";
 import CarouselItems from "@/components/carousel";
-import { getLoggedInUser} from "@/actions/db";
+import { getLoggedInUser,findMovies} from "@/actions/db";
 
 
 var username
@@ -54,9 +54,26 @@ export async function CarouselParams() {
             return output;
         })
     );
+    
+    let listIds= await findMovies()
+    console.log(listIds)
+    let flag=listIds.pop() - 1
+    let flag1=(flag*2)+1
+    let flag2=(flag*2+1)+1
+
+
+    const similarMovies = await Promise.all(
+      listIds.map(async id =>{
+        const output = await FetchTMDB(Movie, {method: 'movie_id', movie_id: id})
+        return output;} )
+
+    );
+
       return(
         <section className="inner_content px-32 z-20">
         <CarouselItems title = {"Recommended for you"} movies={recommendedContent} />
+        <div className="hr solid my-8"/>
+        <CarouselItems title = {'You might watch this\n Hate watch movies:'+String(flag1) + 'and '+String(flag2)} movies={similarMovies} />
         <div className="hr solid my-8"/>
         </section>
   )

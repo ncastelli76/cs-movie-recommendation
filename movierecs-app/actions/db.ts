@@ -150,7 +150,7 @@ export async function findMovies(){
     console.log(ratingS)
     if (ratingS<5){
       if(watchFlag===0){
-        watchFlag=1
+        watchFlag=i+1
       }else{
         if(i!=listMovies.length-1){
           continue;
@@ -198,6 +198,7 @@ export async function findMovies(){
 
   console.log(recMovies)
   console.log(recMovies[2])
+  console.log(watchFlag)
 
   let movieBase='https://api.themoviedb.org/3/'
   let myURL= 'movie/'+String(703398)
@@ -236,6 +237,7 @@ export async function findMovies(){
 
 
   console.log(returnArray.splice(1,5))
-  return finalArray
+  recMovies.push(watchFlag)
+  return recMovies
   //return returnArray;
 }
