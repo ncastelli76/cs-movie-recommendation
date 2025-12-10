@@ -6,12 +6,25 @@ import type { Movie } from "@/types/tmdb-types"
 const userFilePath = path.join(process.cwd(), "userData.json");
 const movieFilePath = path.join(process.cwd(), "movieData.json");
 
+const DEFAULT_USERS = {
+  "logged_in_user": null,
+  "users": []
+}
+
 function loadUsers() {
+  if (!fs.existsSync(userFilePath)) {
+    fs.writeFileSync(userFilePath, JSON.stringify(DEFAULT_USERS), "utf8");
+    return DEFAULT_USERS;
+  }
   const raw = fs.readFileSync(userFilePath, "utf8");
   return JSON.parse(raw);
 }
 
 function loadMovies() {
+  if (!fs.existsSync(movieFilePath)) {
+    fs.writeFileSync(movieFilePath, JSON.stringify({}), "utf8");
+    return [];
+  }
   const raw = fs.readFileSync(movieFilePath, "utf8");
   return JSON.parse(raw);
 }
