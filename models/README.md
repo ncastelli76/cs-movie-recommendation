@@ -1,12 +1,16 @@
 To start model(s) after git clone or git checkout:
 
-a: place real movies2.csv and regularFeatures.csv into cs-movie-recommendation/models/rac2. Current ones are limited in size per github 20M cut-off. These files can be extracted from models.tgz archive I have placed into shared one-drive
 
-b: set environment variable to define full path to service data folder:
+
+a: set environment variable to define full path to service data folder:
 for bash: 
 export REC_BASE_DIR='/Users/ali/Workspaces/WPI/cs-movie-recommendation/'
+or
+you-path/cs-movie-recommendation
 
-c: start service (could it be done via npm?)
+added a function in db.ts that calls python service and recovers movie ids for similar movies from database
+
+b: start service (could it be done via npm?)
 AI-MBP-2:models ali$ python3 service.py 
  * Serving Flask app 'service'
  * Debug mode: on
