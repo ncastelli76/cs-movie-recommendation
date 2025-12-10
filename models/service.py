@@ -20,7 +20,7 @@ def get_similar():
     #ids = models['rac2'].featureSimilarity(int(id))
         #eturn jsonify(ids)
     ids = models['rac2'].featureSimilarity(int(id),int(returnNumber))
-    return jsonify(ids)
+    return jsonify(set(ids))
 
 if __name__ == '__main__':
     app.run(debug=True,port = 8080,host='0.0.0.0')
