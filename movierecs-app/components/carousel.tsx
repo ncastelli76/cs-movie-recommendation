@@ -60,14 +60,12 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
     async function handleRating(movie: Movie){
         useEffect(() => {
         async function load() {
+          
           const r = await getUserRating(movie.id);
           if (r) setMyRating(r.rating);
         }
         load();
       }, [movie.id]);
-    }
-    for (const movie of cleanedMovies){
-      handleRating(movie);
     }
     
         
