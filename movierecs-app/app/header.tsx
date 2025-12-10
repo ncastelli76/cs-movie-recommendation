@@ -23,6 +23,7 @@ export function UserMenuItem() {
   }, [pathname]);
 
   async function handleLogout() {
+    router.push("/signup")
     await logOut()
     setUsername(null)
     router.push("/")

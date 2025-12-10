@@ -28,7 +28,7 @@ export async function CarouselParams() {
   ];
   const homepageContent = await Promise.all(
     homepageParams.map(async params => {
-        const { results } = await FetchTMDB(MovieSearchResultsResponse, { ...params });
+        const { results }  = await FetchTMDB(MovieSearchResultsResponse, { ...params });
         return { ...params, results };
     })
   );
@@ -79,12 +79,12 @@ export async function CarouselParams() {
   )
 
     }
+    
+
 }
 
 
 const HomePage = async () => {
-
-    
   return (
     <div>
       <div className="fixed top-14 left-0 right-0 z-50">
