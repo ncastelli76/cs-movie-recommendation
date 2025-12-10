@@ -1,5 +1,5 @@
 {
-  "logged_in_user": "yoyo",
+  "logged_in_user": "godfather",
   "users": [
     {
       "username": "user1",
@@ -106,6 +106,56 @@
         {
           "movieid": 533533,
           "rating": 7
+        }
+      ]
+    },
+    {
+      "username": "godfather",
+      "password": "godfather",
+      "ratings": [
+        {
+          "movieid": 238,
+          "rating": 10
+        },
+        {
+          "movieid": 240,
+          "rating": 10
+        },
+        {
+          "movieid": 242,
+          "rating": 10
+        },
+        {
+          "movieid": 970689,
+          "rating": 10
+        },
+        {
+          "movieid": 779077,
+          "rating": 10
+        },
+        {
+          "movieid": 294636,
+          "rating": 10
+        },
+        {
+          "movieid": 70829,
+          "rating": 10
+        },
+        {
+          "movieid": 303498,
+          "rating": 10
+        },
+        {
+          "movieid": 298901,
+          "rating": 10
+        },
+        {
+          "movieid": 260889,
+          "rating": 10
+        },
+        {
+          "movieid": 260892,
+          "rating": 10
         }
       ]
     }
