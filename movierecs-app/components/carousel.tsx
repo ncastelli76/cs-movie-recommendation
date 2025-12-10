@@ -52,6 +52,19 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
   const cleanedMovies = cleanAndSortMovies(movies)
 
   //TODO: HANDLE ALREADY RATED MOVIES IN A WAY THAT DOESNT CAUSE A LOGOUT TO KILL THE PROGRAM
+    async function handleRating(movie: Movie){
+        useEffect(() => {
+        async function load() {
+          const r = await getUserRating(movie.id);
+          if (r) setMyRating(r.rating);
+        }
+        load();
+      }, [movie.id]);
+    }
+    for (const movie of cleanedMovies){
+      handleRating(movie);
+    }
+    
         
 
 
