@@ -29,6 +29,20 @@ export function ExpandableCard({
   const [active, setActive] = React.useState(false)
   const cardRef = React.useRef<HTMLDivElement>(null)
   const id = React.useId()
+  const avar=2
+  
+  // match default
+  const regex = /defaultposter.jpeg$/
+  const match = regex.exec(src)
+  if(match){
+    src="/zeusKC.jpeg"
+  }
+
+  // if (src===null){
+  //   console.log("new src")
+  //   src='/zeusKC.jpeg'
+  // }
+  console.log(src)
 
   React.useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {

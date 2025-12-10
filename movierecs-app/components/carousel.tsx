@@ -40,8 +40,10 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
       .filter((movie) => {
         if (!movie.poster_path) {
           //noPoster=1
-          return false;
-
+          //return false;
+          console.log('hi')
+          movie.poster_path="/defaultposter.jpeg"
+          console.log('poster_path='+movie.poster_path)
         }
 
         const release = new Date(movie.release_date);
