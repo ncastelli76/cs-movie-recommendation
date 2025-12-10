@@ -1,17 +1,15 @@
 #!/usr/bin/python3
 from flask import Flask, jsonify, request
-import sys
-import os
-sys.path.append(os.environ["REC_BASE_DIR"]+"/models/rac2/")
-from recommender import recommender
+import sys, os
+from rac2.recommender import recommender
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+rac2_path = os.path.join(BASE_DIR, "rac2") + os.sep
+
 
 app = Flask(__name__)
-#
-## Activate class
-#
-## if need many
 models = {}
-models["rac2"] = recommender(path=os.environ["REC_BASE_DIR"]+"/models/rac2/")
+models["rac2"] = recommender(path=rac2_path)
 
 @app.route('/api/rec2/getSimilar', methods = ['GET'])
 def get_similar():
