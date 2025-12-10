@@ -23,7 +23,7 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
 
       const [myRating, setMyRating] = useState<number | null>(null);
       const router = useRouter()
-
+      //let noPoster=0
     
       async function handleRate(v: number, movie: Movie){
         const user = await getLoggedInUser()
@@ -36,10 +36,15 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
 
     function cleanAndSortMovies(movies: Movie[]): Movie[] {
     const today = new Date();
-
     return movies
       .filter((movie) => {
-        if (!movie.poster_path) return false;
+        if (!movie.poster_path) {
+          //noPoster=1
+          //return false;
+          console.log('hi')
+          movie.poster_path="/defaultposter.jpeg"
+          console.log('poster_path='+movie.poster_path)
+        }
 
         const release = new Date(movie.release_date);
         if (isNaN(release.getTime())) return false;
@@ -66,8 +71,6 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
     }
     
         
-
-
     return(
         <div><h2 className="carousel-header mt-4 text-2xl font-bold">{title}</h2>
         <div className="carousel rounded-box align-items align-content">

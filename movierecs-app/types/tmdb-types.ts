@@ -32,6 +32,8 @@ export const Movie = z.object({
     vote_count: z.number().nullable(),                  // Yes
   });
 
+  
+
 export const MovieSearchResultsResponse = z.object({
     page: z.number(),
     total_pages: z.number(),
@@ -144,10 +146,19 @@ export type KeywordQuery= {
 
 export type ExternalQueryResponse = z.infer<typeof ExternalQueryResponse>;
 
+export type MovieId = {
+  method: typeof Category.enum.search;
+  movie: string;
+}
+
+export type ModelQueryNumber = {
+  method: typeof Category.enum.search;
+  returnNumber: string;
+}
+
 export type MovieSearchResultsResponse = z.infer<typeof MovieSearchResultsResponse>
 export type Movie = z.infer<typeof Movie | typeof MovieSearchResponse>;
 export type Genre = z.infer<typeof Genre>;
-
 
 export type MovieIDParams = Array<FetchTMDBParams>;
 
@@ -157,4 +168,5 @@ export type FetchTMDBParams = SearchQuery
 | TrendingQuery 
 | ExternalQuery
 | KeywordQuery
+| MovieId
 | IDQuery; //todo: add types as needed
