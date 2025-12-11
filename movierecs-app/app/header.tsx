@@ -85,6 +85,11 @@ export default function Header() {
                 The Notebook (examples)
               </Link>
             </li>
+            <li>
+              <Link href="https://sites.google.com/view/information-retrieval-hybrid/home" className="hover:text-gray-300 py-1">
+                About the project...
+              </Link>
+            </li>
             <UserMenuItem />
           </ul>
         </nav>
