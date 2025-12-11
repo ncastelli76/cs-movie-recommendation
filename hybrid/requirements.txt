@@ -1,0 +1,11 @@
+numpy==1.26.4
+pandas==2.3.0
+scikit-learn==1.6.1
+transformers==4.53.0
+tokenizers==0.21.2
+datasets==4.4.1
+evaluate==0.4.6
+torch==2.7.1
+scikit-surprise==1.1.4
+surprise==0.1
+tqdm==4.67.1
