@@ -255,7 +255,20 @@ export async function findMovies(){
 
 
   console.log(returnArray.splice(1,5))
-  recMovies.push(watchFlag)
-  return recMovies
+
+  //Cutting duplicates
+  var lookup = [];
+      var items = recMovies;
+      var result = [];
+
+      for (var item, i = 0; item = items[i++];) {
+          var name = item.id
+          if (!(name in lookup)) {
+              lookup.push(name);
+              result.push(item);
+          }
+        }
+  result.push(watchFlag)
+  return result;
   //return returnArray;
 }

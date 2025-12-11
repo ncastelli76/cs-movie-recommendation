@@ -22,3 +22,5 @@ Press CTRL+C to quit
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 828-834-825
+
+ Contains a pipfile for dependencies, to use navigate to containing folder and pipenv run python3 service.py
