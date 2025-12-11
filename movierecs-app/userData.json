@@ -1,5 +1,5 @@
 {
-  "logged_in_user": "littlekid",
+  "logged_in_user": null,
   "users": [
     {
       "id": 1001,
@@ -433,6 +433,49 @@
           "rating": 9,
           "userid": 1003,
           "timestamp": 1765409557
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "username": "newuser",
+      "password": "password",
+      "ratings": [
+        {
+          "movieid": 24428,
+          "rating": 10,
+          "userid": 1004,
+          "timestamp": 1765491861
+        },
+        {
+          "movieid": 299536,
+          "rating": 1,
+          "userid": 1004,
+          "timestamp": 1765491866
+        },
+        {
+          "movieid": 99861,
+          "rating": 8,
+          "userid": 1004,
+          "timestamp": 1765491872
+        },
+        {
+          "movieid": 120,
+          "rating": 10,
+          "userid": 1004,
+          "timestamp": 1765491898
+        },
+        {
+          "movieid": 121,
+          "rating": 10,
+          "userid": 1004,
+          "timestamp": 1765491899
+        },
+        {
+          "movieid": 122,
+          "rating": 10,
+          "userid": 1004,
+          "timestamp": 1765491900
         }
       ]
     }

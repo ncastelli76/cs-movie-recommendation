@@ -49,7 +49,7 @@ class HybridRecommender:
             import random
             movieIE=random.randint(1,400)
             movieIDNew=random.randint(100,300000)
-            row = self.df.loc[self.df["id"] == movieIDNew]
+            row = self.df.loc[self.df["id"] == 100402] #fallback to known
             #row = self.df.loc[self.df["id"] == movie_id]
             #row=self.df.iloc[movieIE,:]
             #print(row)
