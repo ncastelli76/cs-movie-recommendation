@@ -22,3 +22,19 @@ Press CTRL+C to quit
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 828-834-825
+
+For hybrid model, rac3, called in first user carousel, need to install all these packages for it to work properly:
+pip3 install torch
+pip3 install transformers
+pip3 install surprise
+pip3 uninstall numpy
+pip3 install 'numpy<2'
+pip3 install sklearn
+pip3 uninstall scikit-learn
+pip3 install scikit-learn
+pip3 install datasets
+pip3 install evaluate
+
+
+Datasets: for hybrid model
+load transfomer data from this tar file: models/rac3/saved_transformer/

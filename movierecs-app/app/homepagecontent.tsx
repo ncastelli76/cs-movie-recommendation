@@ -3,7 +3,7 @@ import { FetchTMDB } from '@/actions/query';
 import { Movie, MovieSearchResultsResponse, FetchTMDBParams, MovieIDParams, HomePageParams} from '@/types/tmdb-types';
 import Search_bar from "./search_bar";
 import CarouselItems from "@/components/carousel";
-import { getLoggedInUser,findMovies} from "@/actions/db";
+import { getLoggedInUser,findMovies,findMoviesHeavy} from "@/actions/db";
 
 
 var username
@@ -43,13 +43,15 @@ export async function CarouselParams() {
     }
     else{
     //TODO:if logged in, show personalized recommendations instead of popular movies
+    let manyIds=await findMoviesHeavy()
+    console.log(manyIds)
     const movieIDs: number[] = [
         533533, 
         1084242, 
         1083637]; //THIS IS A TOY LIST OF IDS FOR EXAMPLE PURPOSES
 
     const recommendedContent = await Promise.all(
-        movieIDs.map(async id => {
+        manyIds.map(async id => {
             const output = await FetchTMDB(Movie, {method: 'movie_id', movie_id: id})
             return output;
         })
