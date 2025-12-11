@@ -1,111 +1,438 @@
 {
-  "logged_in_user": null,
+  "logged_in_user": "littlekid",
   "users": [
     {
-      "username": "user1",
-      "password": "password1",
+      "id": 1001,
+      "username": "newblankuser",
+      "password": "password",
       "ratings": [
         {
-          "movieid": 254,
-          "rating": 10
+          "movieid": 14613,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408686
+        },
+        {
+          "movieid": 24428,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408681
+        },
+        {
+          "movieid": 299534,
+          "rating": 9,
+          "userid": 1001,
+          "timestamp": 1765408683
+        },
+        {
+          "movieid": 299536,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408682
+        },
+        {
+          "movieid": 99861,
+          "rating": 7,
+          "userid": 1001,
+          "timestamp": 1765408766
+        },
+        {
+          "movieid": 1154598,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408768
+        },
+        {
+          "movieid": 1549292,
+          "rating": 9,
+          "userid": 1001,
+          "timestamp": 1765408772
+        },
+        {
+          "movieid": 353595,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408773
+        },
+        {
+          "movieid": 602307,
+          "rating": 8,
+          "userid": 1001,
+          "timestamp": 1765408774
+        },
+        {
+          "movieid": 461054,
+          "rating": 9,
+          "userid": 1001,
+          "timestamp": 1765408775
+        },
+        {
+          "movieid": 396330,
+          "rating": 9,
+          "userid": 1001,
+          "timestamp": 1765408777
+        },
+        {
+          "movieid": 1359227,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408777
+        },
+        {
+          "movieid": 637395,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408782
+        },
+        {
+          "movieid": 768509,
+          "rating": 9,
+          "userid": 1001,
+          "timestamp": 1765408783
+        },
+        {
+          "movieid": 668602,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408784
+        },
+        {
+          "movieid": 857169,
+          "rating": 1,
+          "userid": 1001,
+          "timestamp": 1765408787
+        },
+        {
+          "movieid": 11036,
+          "rating": 1,
+          "userid": 1001,
+          "timestamp": 1765408801
+        },
+        {
+          "movieid": 238,
+          "rating": 3,
+          "userid": 1001,
+          "timestamp": 1765408804
+        },
+        {
+          "movieid": 240,
+          "rating": 2,
+          "userid": 1001,
+          "timestamp": 1765408805
+        },
+        {
+          "movieid": 1726,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408810
+        },
+        {
+          "movieid": 10138,
+          "rating": 9,
+          "userid": 1001,
+          "timestamp": 1765408812
+        },
+        {
+          "movieid": 68721,
+          "rating": 10,
+          "userid": 1001,
+          "timestamp": 1765408812
+        },
+        {
+          "movieid": 169934,
+          "rating": 9,
+          "userid": 1001,
+          "timestamp": 1765408815
         }
       ]
     },
     {
-      "username": "yoyo",
-      "password": "yoyo",
+      "id": 1002,
+      "username": "notebookfan",
+      "password": "password",
       "ratings": [
         {
           "movieid": 11036,
-          "rating": 4
-        },
-        {
-          "movieid": 199615,
-          "rating": 8
-        },
-        {
-          "movieid": 24428,
-          "rating": 10
-        },
-        {
-          "movieid": 275663,
-          "rating": 2
-        },
-        {
-          "movieid": 9320,
-          "rating": 1
-        },
-        {
-          "movieid": 14609,
-          "rating": 1
-        },
-        {
-          "movieid": 65591,
-          "rating": 1
-        },
-        {
-          "movieid": 392031,
-          "rating": 1
-        },
-        {
-          "movieid": 685795,
-          "rating": 1
-        },
-        {
-          "movieid": 40081,
-          "rating": 1
-        },
-        {
-          "movieid": 63441,
-          "rating": 1
-        },
-        {
-          "movieid": 14613,
-          "rating": 2
-        },
-        {
-          "movieid": 1108354,
-          "rating": 1
-        },
-        {
-          "movieid": 257346,
-          "rating": 2
-        },
-        {
-          "movieid": 1154598,
-          "rating": 3
-        },
-        {
-          "movieid": 99861,
-          "rating": 8
-        },
-        {
-          "movieid": 299536,
-          "rating": 10
-        },
-        {
-          "movieid": 299534,
-          "rating": 10
-        },
-        {
-          "movieid": 518293,
-          "rating": 1
-        },
-        {
-          "movieid": 11868,
-          "rating": 8
-        },
-        {
-          "movieid": 505642,
-          "rating": 10
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765408842
         },
         {
           "movieid": 703398,
-          "rating": 1
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408843
         },
         {
-          "movieid": 533533,
-          "rating": 7
+          "movieid": 199615,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408844
+        },
+        {
+          "movieid": 238,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765408849
+        },
+        {
+          "movieid": 240,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408850
+        },
+        {
+          "movieid": 242,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408850
+        },
+        {
+          "movieid": 24428,
+          "rating": 3,
+          "userid": 1002,
+          "timestamp": 1765408852
+        },
+        {
+          "movieid": 299536,
+          "rating": 2,
+          "userid": 1002,
+          "timestamp": 1765408853
+        },
+        {
+          "movieid": 299534,
+          "rating": 1,
+          "userid": 1002,
+          "timestamp": 1765408854
+        },
+        {
+          "movieid": 1455575,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408880
+        },
+        {
+          "movieid": 1594337,
+          "rating": 8,
+          "userid": 1002,
+          "timestamp": 1765408888
+        },
+        {
+          "movieid": 103,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408903
+        },
+        {
+          "movieid": 369557,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408919
+        },
+        {
+          "movieid": 198277,
+          "rating": 8,
+          "userid": 1002,
+          "timestamp": 1765408922
+        },
+        {
+          "movieid": 1084242,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765408966
+        },
+        {
+          "movieid": 12153,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765409236
+        },
+        {
+          "movieid": 59850,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765409253
+        },
+        {
+          "movieid": 316626,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765409253
+        },
+        {
+          "movieid": 1052931,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765409254
+        },
+        {
+          "movieid": 72759,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765409263
+        },
+        {
+          "movieid": 27902,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765409264
+        },
+        {
+          "movieid": 206271,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765409265
+        },
+        {
+          "movieid": 1180831,
+          "rating": 8,
+          "userid": 1002,
+          "timestamp": 1765409334
+        },
+        {
+          "movieid": 1228246,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765409334
+        },
+        {
+          "movieid": 1580902,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765409337
+        },
+        {
+          "movieid": 1363123,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765409338
+        },
+        {
+          "movieid": 454294,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765409356
+        },
+        {
+          "movieid": 585,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765409367
+        },
+        {
+          "movieid": 745,
+          "rating": 10,
+          "userid": 1002,
+          "timestamp": 1765409371
+        },
+        {
+          "movieid": 78,
+          "rating": 9,
+          "userid": 1002,
+          "timestamp": 1765409388
+        },
+        {
+          "movieid": 2330,
+          "rating": 7,
+          "userid": 1002,
+          "timestamp": 1765409391
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "username": "littlekid",
+      "password": "password",
+      "ratings": [
+        {
+          "movieid": 1084242,
+          "rating": 10,
+          "userid": 1003,
+          "timestamp": 1765409476
+        },
+        {
+          "movieid": 1453418,
+          "rating": 9,
+          "userid": 1003,
+          "timestamp": 1765409481
+        },
+        {
+          "movieid": 1319900,
+          "rating": 10,
+          "userid": 1003,
+          "timestamp": 1765409483
+        },
+        {
+          "movieid": 1453792,
+          "rating": 10,
+          "userid": 1003,
+          "timestamp": 1765409484
+        },
+        {
+          "movieid": 1036892,
+          "rating": 10,
+          "userid": 1003,
+          "timestamp": 1765409485
+        },
+        {
+          "movieid": 893723,
+          "rating": 10,
+          "userid": 1003,
+          "timestamp": 1765409496
+        },
+        {
+          "movieid": 675445,
+          "rating": 10,
+          "userid": 1003,
+          "timestamp": 1765409497
+        },
+        {
+          "movieid": 1507275,
+          "rating": 9,
+          "userid": 1003,
+          "timestamp": 1765409499
+        },
+        {
+          "movieid": 624620,
+          "rating": 8,
+          "userid": 1003,
+          "timestamp": 1765409500
+        },
+        {
+          "movieid": 552095,
+          "rating": 10,
+          "userid": 1003,
+          "timestamp": 1765409502
+        },
+        {
+          "movieid": 743439,
+          "rating": 7,
+          "userid": 1003,
+          "timestamp": 1765409504
+        },
+        {
+          "movieid": 481583,
+          "rating": 9,
+          "userid": 1003,
+          "timestamp": 1765409519
+        },
+        {
+          "movieid": 573171,
+          "rating": 8,
+          "userid": 1003,
+          "timestamp": 1765409521
+        },
+        {
+          "movieid": 770254,
+          "rating": 9,
+          "userid": 1003,
+          "timestamp": 1765409542
+        },
+        {
+          "movieid": 20592,
+          "rating": 9,
+          "userid": 1003,
+          "timestamp": 1765409557
         }
       ]
     }

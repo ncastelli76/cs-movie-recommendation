@@ -6,12 +6,25 @@ import type { Movie } from "@/types/tmdb-types"
 const userFilePath = path.join(process.cwd(), "userData.json");
 const movieFilePath = path.join(process.cwd(), "movieData.json");
 
+const DEFAULT_USERS = {
+  "logged_in_user": null,
+  "users": []
+}
+
 function loadUsers() {
+  if (!fs.existsSync(userFilePath)) {
+    fs.writeFileSync(userFilePath, JSON.stringify(DEFAULT_USERS), "utf8");
+    return DEFAULT_USERS;
+  }
   const raw = fs.readFileSync(userFilePath, "utf8");
   return JSON.parse(raw);
 }
 
 function loadMovies() {
+  if (!fs.existsSync(movieFilePath)) {
+    fs.writeFileSync(movieFilePath, JSON.stringify({}), "utf8");
+    return [];
+  }
   const raw = fs.readFileSync(movieFilePath, "utf8");
   return JSON.parse(raw);
 }
@@ -27,9 +40,11 @@ function saveMovies(movieData: any) {
 
 export async function createUser(username: string, password: string){
   const userData = loadUsers();
+  const userCount = userData.users.length;
   const exists = userData.users.find((u: any) => u.username === username);
   if (exists) throw new Error("User already exists");
   userData.users.push({
+    id: userCount + 1001,
     username,
     password,
     ratings: []
@@ -80,11 +95,14 @@ export async function rate(rating: number, movie: Movie){
   const existingRating = user.ratings.find((r: any) => r.movieid === movie.id);
   if (existingRating) {
     existingRating.rating = rating
+    existingRating.timestamp = Math.floor(Date.now()/1000)
   }
   else {
     user.ratings.push({
       movieid: movie.id,
-      rating
+      rating,
+      userid: user.id,
+      timestamp: Math.floor(Date.now()/1000)
     });
   }
   saveUsers(userData)

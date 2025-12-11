@@ -69,4 +69,4 @@ class recommender:
                return returnList
           for i in range(0,returnNumber):
                returnList.append(huh[i][1])
-          return returnList
+          return set(returnList)
