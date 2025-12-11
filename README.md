@@ -26,16 +26,16 @@ or
 localhost:8080/api/rec2/getSimilar?id=120
 
 For the full model, rac3, called in first user carousel, need to install all these packages for it to work properly:
-*pip3 install torch
-*pip3 install transformers
-*pip3 install surprise
-*pip3 uninstall numpy
-*pip3 install 'numpy<2'
-*pip3 install sklearn
-*pip3 uninstall scikit-learn
-*pip3 install scikit-learn
-*pip3 install datasets
-*pip3 install evaluate
+* pip3 install torch
+* pip3 install transformers
+* pip3 install surprise
+* pip3 uninstall numpy
+* pip3 install 'numpy<2'
+* pip3 install sklearn
+* pip3 uninstall scikit-learn
+* pip3 install scikit-learn
+* pip3 install datasets
+* pip3 install evaluate
 
 for hybrid model, make sure saved_transformers folder is in rac3. If not or it doesn't work, install
 from this shared onedrive and place locally:
