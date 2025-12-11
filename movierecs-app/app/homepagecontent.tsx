@@ -45,10 +45,6 @@ export async function CarouselParams() {
     //TODO:if logged in, show personalized recommendations instead of popular movies
     let manyIds=await findMoviesHeavy()
     console.log(manyIds)
-    const movieIDs: number[] = [
-        533533, 
-        1084242, 
-        1083637]; //THIS IS A TOY LIST OF IDS FOR EXAMPLE PURPOSES
 
     const recommendedContent = await Promise.all(
         manyIds.map(async id => {
@@ -58,6 +54,7 @@ export async function CarouselParams() {
     );
     
     let listIds= await findMovies()
+    
     console.log(listIds)
     let flag=listIds.pop() - 1
     let flag1=(flag*2)+1
@@ -75,7 +72,7 @@ export async function CarouselParams() {
         <section className="inner_content px-32 z-20">
         <CarouselItems title = {"Recommended for you"} movies={recommendedContent} />
         <div className="hr solid my-8"/>
-        <CarouselItems title = {'You might watch this\n Hate watch movies:'+String(flag1) + 'and '+String(flag2)} movies={similarMovies} />
+        <CarouselItems title = {"Based on your recent views"} movies={similarMovies} />
         <div className="hr solid my-8"/>
         </section>
   )

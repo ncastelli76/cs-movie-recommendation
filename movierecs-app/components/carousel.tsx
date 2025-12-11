@@ -38,12 +38,13 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
     const today = new Date();
     return movies
       .filter((movie) => {
+        if(movie){
         if (!movie.poster_path) {
           //noPoster=1
           //return false;
-          console.log('hi')
-          movie.poster_path="/defaultposter.jpeg"
-          console.log('poster_path='+movie.poster_path)
+          //console.log('hi')
+          movie.poster_path="/defaultposter.png"
+          //console.log('poster_path='+movie.poster_path)
         }
 
         const release = new Date(movie.release_date);
@@ -51,7 +52,7 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
         if (release > today) return false;
 
         return true;
-      })
+      }})
   }
 
   const cleanedMovies = cleanAndSortMovies(movies)

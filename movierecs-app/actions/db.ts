@@ -132,6 +132,7 @@ export async function findMovies(){
   console.log('ass')
   console.log(listMovies2)
   let returnArray= [1]
+  returnArray.pop()
   let rightObject=listMovies2[0]
   for (let i = 0; i < listMovies2.length; i++){
     if(listMovies2[i].username==username){
@@ -165,7 +166,7 @@ export async function findMovies(){
     }
     //console.log(listMovies[i]);
     let ratingS= listMovies[listMovies.length-1-i].rating
-    console.log(ratingS)
+    //console.log(ratingS)
     if (ratingS<5){
       if(watchFlag===0){
         watchFlag=i+1
@@ -187,10 +188,10 @@ export async function findMovies(){
   let url5='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[5])
   
   let recMovies=[]
-  console.log(url1)
+  //console.log(url1)
   const response = await fetch(url1);
   const data= await response.json()
-  console.log(data)
+  //console.log(data)
   recMovies.push(data[0])
   recMovies.push(data[1])
   const response1 = await fetch(url2);
@@ -216,13 +217,13 @@ export async function findMovies(){
 
   console.log(recMovies)
   console.log(recMovies[2])
-  console.log(watchFlag)
+  //console.log(watchFlag)
 
   let movieBase='https://api.themoviedb.org/3/'
   let myURL= 'movie/'+String(703398)
   let apiURL=movieBase+myURL
 
-  console.log(apiURL)
+  //console.log(apiURL)
 
   const options = {
     method: 'GET',
@@ -234,7 +235,7 @@ export async function findMovies(){
   const responseMovie = await fetch(apiURL, options);
   //console.log(responseMovie)
   const dataMovie=await responseMovie.json()
-  console.log(dataMovie)
+  //console.log(dataMovie)
   let posterPath=null
   if(dataMovie.poster_path != null){
     let basePath='https://image.tmdb.org/t/p/w1280'
@@ -245,18 +246,25 @@ export async function findMovies(){
   const theTitle=dataMovie.original_title
   const theDescription=dataMovie.overview
   let shortVersion=''
-  console.log(theTitle)
+  //console.log(theTitle)
 
   let finalArray=[]
   finalArray.push(theTitle)
   finalArray.push(posterPath)
   finalArray.push(dataMovie.id)
-  console.log(finalArray)
+  //console.log(finalArray)
 
 
-  console.log(returnArray.splice(1,5))
+  //console.log(returnArray.splice(1,5))
   recMovies.push(watchFlag)
-  return recMovies
+
+  let output = [1];
+  output.pop();
+
+  recMovies.forEach(element => {if (!(element in output)){output.push(element)}});
+  
+  
+  return output
   //return returnArray;
 }
 
@@ -357,18 +365,18 @@ export async function findMoviesHeavy(){
   console.log(data[1])
 
   console.log(recMovies)
-  console.log('!')
+  //console.log('!')
   console.log(url2)
   const response1 = await fetch(url2);
-  console.log(response1)
-  console.log('here')
+  //console.log(response1)
+  //console.log('here')
   const data1= await response1.json()
   for(let i=0;i< data1.length; i++){
     recMovies.push(data1[i])
   }
   //recMovies.push(data1[0])
  // recMovies.push(data1[1])
-  console.log('!')
+  //console.log('!')
   const response3 = await fetch(url3);
   const data3= await response3.json()
   for(let i=0;i< data3.length; i++){
@@ -376,7 +384,7 @@ export async function findMoviesHeavy(){
   }
   //recMovies.push(data3[0])
   //recMovies.push(data3[1])
-  console.log('!')
+  //console.log('!')
   const response4 = await fetch(url4);
   const data4= await response4.json()
   for(let i=0;i< data4.length; i++){
@@ -392,16 +400,16 @@ export async function findMoviesHeavy(){
   for(let i=0;i< data5.length; i++){
     recMovies.push(data5[i])
   }
-  console.log('!')
-  console.log(recMovies)
-  console.log(recMovies[2])
-  console.log(watchFlag)
+  //console.log('!')
+  //console.log(recMovies)
+  //console.log(recMovies[2])
+  //console.log(watchFlag)
 
   let movieBase='https://api.themoviedb.org/3/'
   let myURL= 'movie/'+String(703398)
   let apiURL=movieBase+myURL
 
-  console.log(apiURL)
+  //console.log(apiURL)
 
   const options = {
     method: 'GET',
@@ -413,7 +421,7 @@ export async function findMoviesHeavy(){
   const responseMovie = await fetch(apiURL, options);
   //console.log(responseMovie)
   const dataMovie=await responseMovie.json()
-  console.log(dataMovie)
+  //console.log(dataMovie)
   let posterPath=null
   if(dataMovie.poster_path != null){
     let basePath='https://image.tmdb.org/t/p/w1280'
@@ -424,17 +432,21 @@ export async function findMoviesHeavy(){
   const theTitle=dataMovie.original_title
   const theDescription=dataMovie.overview
   let shortVersion=''
-  console.log(theTitle)
+  //console.log(theTitle)
 
   let finalArray=[]
   finalArray.push(theTitle)
   finalArray.push(posterPath)
   finalArray.push(dataMovie.id)
-  console.log(finalArray)
+  //console.log(finalArray)
+  let output = [1];
+  output.pop();
+
+  recMovies.forEach(element => {if (!(element in output)){output.push(element)}});
 
 
-  console.log(returnArray.splice(1,5))
+  //console.log(returnArray.splice(1,5))
   //recMovies.push(watchFlag)
-  return recMovies
+  return output
   //return returnArray;
 }
