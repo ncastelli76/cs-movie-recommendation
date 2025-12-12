@@ -61,7 +61,11 @@ export async function CarouselParams() {
     //let flag2=(flag*2+1)+1
 
 
+
+
+
     const similarMovies = await Promise.all(
+
       listIds.map(async id =>{
         const output = await FetchTMDB(Movie, {method: 'movie_id', movie_id: id})
         return output;} )
@@ -72,7 +76,7 @@ export async function CarouselParams() {
         <section className="inner_content px-32 z-20">
         <CarouselItems title = {"Recommended for you"} movies={recommendedContent} />
         <div className="hr solid my-8"/>
-        <CarouselItems title = {"Based on your recent views"} movies={similarMovies} />
+        <CarouselItems title = {'Based on your recent views'} movies={similarMovies} />
         <div className="hr solid my-8"/>
         </section>
   )

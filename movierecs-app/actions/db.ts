@@ -255,198 +255,21 @@ export async function findMovies(){
   //console.log(finalArray)
 
 
-  //console.log(returnArray.splice(1,5))
-  recMovies.push(watchFlag)
+  console.log(returnArray.splice(1,5))
 
-  let output = [1];
-  output.pop();
+  //Cutting duplicates
+  var lookup = [];
+      var items = recMovies;
+      var result = [];
 
-  recMovies.forEach(element => {if (!(element in output)){output.push(element)}});
-  
-  
-  return output
-  //return returnArray;
-}
-
-
-
-export async function findMoviesHeavy(){
-  const userData = loadUsers();
-  const movieData = loadMovies();
-  const username = userData.logged_in_user
-  const user = userData.users.find((u: any) => u.username === username);
-  //const existingMovie = movieData.find((r: any) => r.id === movie.id)
-  if (!user) {
-    throw new Error("Logged-in user not found in userDatabase");
-  }
-  const listMovies2= userData.users
-  console.log('ass')
-  console.log(listMovies2)
-  let returnArray= [1]
-  let rightObject=listMovies2[0]
-  for (let i = 0; i < listMovies2.length; i++){
-    if(listMovies2[i].username==username){
-      rightObject=listMovies2[i]
-    }
-  }
-  let listMovies=rightObject.ratings
-  console.log(listMovies)
-  console.log(Object.keys(listMovies).length)
-  console.log(listMovies.length)
-  if(Object.keys(listMovies).length < 5){
-    let numRandoms=5-listMovies.length
-    for (let i = 0; i < numRandoms; i++){
-      //returnArray.push(722)
-      returnArray.push(Math.floor(Math.random() * (300-1) +1));
-    }
-    for (let i = 0; i < listMovies.length; i++) {
-      //console.log(listMovies[i]);
-      if(i+numRandoms>=5){
-        break;
-      }
-      const entryPush=listMovies[listMovies.length-1-i].movieid
-      returnArray.push(entryPush)
-    }
-    return returnArray.splice(0,1)
-  }
-
-  let watchFlag=0
-  for (let i = 0; i < listMovies.length; i++) {
-    if(returnArray.length==6){
-      break;
-    }
-    //console.log(listMovies[i]);
-    let ratingS= listMovies[listMovies.length-1-i].rating
-    console.log(ratingS)
-    if (ratingS<5){
-      if(watchFlag===0){
-        watchFlag=i+1
-      }else{
-        if(i!=listMovies.length-1){
-          continue;
+      for (var item, i = 0; item = items[i++];) {
+          var name = item.id
+          if (!(name in lookup)) {
+              lookup.push(name);
+              result.push(item);
+          }
         }
-      }
-    }
-    const entryPush=listMovies[listMovies.length-1-i].movieid
-
-    returnArray.push(entryPush)
-
-  }
-  let tryThis=0
-  while(true){
-  let rando=Math.floor(Math.random() * (listMovies.length-1))
-  let rando2=Math.floor(Math.random() * (listMovies.length-1))
-  if(listMovies[rando].rating>5 && listMovies[rando2].rating > 5){
-    returnArray[2]=listMovies[rando].movieid
-    returnArray[4]=listMovies[rando2].movieid
-    break
-  }
-  tryThis=tryThis+1
-  if(tryThis==5){
-    break
-  }
-  }
-  let url1='http://localhost:8080/api/rec3/getSimilar?id='+String(returnArray[1])
-  let url2='http://localhost:8080/api/rec3/getSimilar?id='+String(returnArray[2])
-  let url3='http://localhost:8080/api/rec3/getSimilar?id='+String(returnArray[3])
-  let url4='http://localhost:8080/api/rec3/getSimilar?id='+String(returnArray[4])
-  let url5='http://localhost:8080/api/rec3/getSimilar?id='+String(returnArray[5])
-  
-  let recMovies=[]
-  console.log(url1)
-  console.log('hello')
-  const response = await fetch(url1);
-  const data= await response.json()
-  console.log(data)
-  for(let i=0;i< data.length; i++){
-    recMovies.push(data[i])
-  }
-  //recMovies.push(data[0])
-  console.log(data[1])
-
-  console.log(recMovies)
-  //console.log('!')
-  console.log(url2)
-  const response1 = await fetch(url2);
-  //console.log(response1)
-  //console.log('here')
-  const data1= await response1.json()
-  for(let i=0;i< data1.length; i++){
-    recMovies.push(data1[i])
-  }
-  //recMovies.push(data1[0])
- // recMovies.push(data1[1])
-  //console.log('!')
-  const response3 = await fetch(url3);
-  const data3= await response3.json()
-  for(let i=0;i< data3.length; i++){
-    recMovies.push(data3[i])
-  }
-  //recMovies.push(data3[0])
-  //recMovies.push(data3[1])
-  //console.log('!')
-  const response4 = await fetch(url4);
-  const data4= await response4.json()
-  for(let i=0;i< data4.length; i++){
-    recMovies.push(data4[i])
-  }
-  //recMovies.push(data4[0])
-  //recMovies.push(data4[1])
-  console.log('!')
-  const response5 = await fetch(url5);
-  const data5= await response5.json()
-  //recMovies.push(data5[0])
-  //recMovies.push(data5[1])
-  for(let i=0;i< data5.length; i++){
-    recMovies.push(data5[i])
-  }
-  //console.log('!')
-  //console.log(recMovies)
-  //console.log(recMovies[2])
-  //console.log(watchFlag)
-
-  let movieBase='https://api.themoviedb.org/3/'
-  let myURL= 'movie/'+String(703398)
-  let apiURL=movieBase+myURL
-
-  //console.log(apiURL)
-
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMTE2YTAxMTc4YzU2NWRjNGZkNGRlM2NjNTI3NTc2NyIsIm5iZiI6MTc2MTc2NTg5OC40NDQsInN1YiI6IjY5MDI2YTBhZjcwOWE1OTRiNWVlN2E3ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RarF4iMCJpwv3pZoJpSAdvyhrgtMWsTP597vf-_jM-A`, //${TMDB_READ_ACCESS_TOKEN}
-    },
-  };
-  const responseMovie = await fetch(apiURL, options);
-  //console.log(responseMovie)
-  const dataMovie=await responseMovie.json()
-  //console.log(dataMovie)
-  let posterPath=null
-  if(dataMovie.poster_path != null){
-    let basePath='https://image.tmdb.org/t/p/w1280'
-    posterPath=basePath+dataMovie.poster_path
-    //posterPath='grayBox'
-  }
-
-  const theTitle=dataMovie.original_title
-  const theDescription=dataMovie.overview
-  let shortVersion=''
-  //console.log(theTitle)
-
-  let finalArray=[]
-  finalArray.push(theTitle)
-  finalArray.push(posterPath)
-  finalArray.push(dataMovie.id)
-  //console.log(finalArray)
-  let output = [1];
-  output.pop();
-
-  recMovies.forEach(element => {if (!(element in output)){output.push(element)}});
-
-
-  //console.log(returnArray.splice(1,5))
-  //recMovies.push(watchFlag)
-  return output
+  result.push(watchFlag)
+  return result;
   //return returnArray;
 }
