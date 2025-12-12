@@ -181,11 +181,11 @@ export async function findMovies(){
     returnArray.push(entryPush)
 
   }
-  let url1='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[1])
-  let url2='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[2])
-  let url3='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[3])
-  let url4='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[4])
-  let url5='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[5])
+  let url1='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[0])
+  let url2='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[1])
+  let url3='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[2])
+  let url4='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[3])
+  let url5='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[4])
   
   let recMovies=[]
   //console.log(url1)

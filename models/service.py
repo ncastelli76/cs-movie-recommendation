@@ -12,6 +12,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 rac2_path = os.path.join(BASE_DIR, "rac2") + os.sep
 rac3_path = os.path.join(BASE_DIR, "rac3") + os.sep
 
+PARENT_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+json_path = os.path.abspath(os.path.join(PARENT_DIR, "movierecs-app/movieData.json"))
+
 
 app = Flask(__name__)
 models = {}
@@ -59,6 +62,7 @@ def get_similar():
         #eturn jsonify(ids)
     ids = models['rac2'].featureSimilarity(int(id),int(returnNumber))
     return jsonify(ids)
+
 @app.route('/api/rec3/getSimilar', methods = ['GET'])
 def get_similarH():
     ids = []

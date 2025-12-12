@@ -37,9 +37,18 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
     function cleanAndSortMovies(movies: Movie[]): Movie[] {
 
     const today = new Date();
+    var seenMovies: Number[]
+    seenMovies = [];
     return movies
       .filter((movie) => {
         if(movie){
+          console.log(seenMovies)
+          if(seenMovies.includes(movie.id)){
+            return false;
+          }
+          else{
+            seenMovies.push(movie.id);
+          }
         if (!movie.poster_path) {
           //noPoster=1
           //return false;
