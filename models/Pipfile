@@ -4,6 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+torch = "*"
+transformers = "*"
+surprise = "*"
+numpy = "<2"
+scikit-learn = "*"
+datasets = "*"
+evaluate = "*"
 flask = "*"
 
 [dev-packages]

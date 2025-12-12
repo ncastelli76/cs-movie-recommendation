@@ -9,11 +9,12 @@ import math
 import sys
 import random
 import os
-from recommender import recommender
-    
+from recommenderA import recommenderA
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 #
 ## globals
-rec = recommender(movies = "movies2.csv", regularFeatures = "regularFeatures.csv", path=os.environ["REC_BASE_DIR"]+"/models/rac2/")
+rec = recommenderA(movies = "movies2.csv", regularFeatures = "regularFeatures.csv", path="")
 
 ## Hardcoded execution example
 ## for debug:

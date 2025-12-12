@@ -35,15 +35,26 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
       }
 
     function cleanAndSortMovies(movies: Movie[]): Movie[] {
+
     const today = new Date();
+    var seenMovies: Number[]
+    seenMovies = [];
     return movies
       .filter((movie) => {
+        if(movie){
+          console.log(seenMovies)
+          if(seenMovies.includes(movie.id)){
+            return false;
+          }
+          else{
+            seenMovies.push(movie.id);
+          }
         if (!movie.poster_path) {
           //noPoster=1
           //return false;
-          console.log('hi')
-          movie.poster_path="/defaultposter.jpeg"
-          console.log('poster_path='+movie.poster_path)
+          //console.log('hi')
+          movie.poster_path="/defaultposter.png"
+          //console.log('poster_path='+movie.poster_path)
         }
 
         const release = new Date(movie.release_date);
@@ -51,7 +62,7 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
         if (release > today) return false;
 
         return true;
-      })
+      }})
   }
 
   const cleanedMovies = cleanAndSortMovies(movies)
@@ -73,7 +84,7 @@ const CarouselItems = ({ title, movies}: CarouselItemsProps) => {
         <div><h2 className="carousel-header mt-4 text-2xl font-bold">{title}</h2>
         <div className="carousel rounded-box align-items align-content">
             {cleanedMovies.map((movie) => (
-                <div className="carousel-item" key={movie.id}>
+                <div className="carousel-item" key={Math.random()}>
                 <ExpandableCard title={movie.title} src={TMDB_IMAGE_BASE + movie.poster_path} description={movie.release_date}>
                     <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
                         Rate This Movie:

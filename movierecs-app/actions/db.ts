@@ -132,6 +132,7 @@ export async function findMovies(){
   console.log('ass')
   console.log(listMovies2)
   let returnArray= [1]
+  returnArray.pop()
   let rightObject=listMovies2[0]
   for (let i = 0; i < listMovies2.length; i++){
     if(listMovies2[i].username==username){
@@ -165,7 +166,7 @@ export async function findMovies(){
     }
     //console.log(listMovies[i]);
     let ratingS= listMovies[listMovies.length-1-i].rating
-    console.log(ratingS)
+    //console.log(ratingS)
     if (ratingS<5){
       if(watchFlag===0){
         watchFlag=i+1
@@ -180,17 +181,17 @@ export async function findMovies(){
     returnArray.push(entryPush)
 
   }
-  let url1='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[1])
-  let url2='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[2])
-  let url3='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[3])
-  let url4='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[4])
-  let url5='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[5])
+  let url1='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[0])
+  let url2='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[1])
+  let url3='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[2])
+  let url4='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[3])
+  let url5='http://localhost:8080/api/rec2/getSimilar?id='+String(returnArray[4])
   
   let recMovies=[]
-  console.log(url1)
+  //console.log(url1)
   const response = await fetch(url1);
   const data= await response.json()
-  console.log(data)
+  //console.log(data)
   recMovies.push(data[0])
   recMovies.push(data[1])
   const response1 = await fetch(url2);
@@ -216,13 +217,13 @@ export async function findMovies(){
 
   console.log(recMovies)
   console.log(recMovies[2])
-  console.log(watchFlag)
+  //console.log(watchFlag)
 
   let movieBase='https://api.themoviedb.org/3/'
   let myURL= 'movie/'+String(703398)
   let apiURL=movieBase+myURL
 
-  console.log(apiURL)
+  //console.log(apiURL)
 
   const options = {
     method: 'GET',
@@ -234,7 +235,7 @@ export async function findMovies(){
   const responseMovie = await fetch(apiURL, options);
   //console.log(responseMovie)
   const dataMovie=await responseMovie.json()
-  console.log(dataMovie)
+  //console.log(dataMovie)
   let posterPath=null
   if(dataMovie.poster_path != null){
     let basePath='https://image.tmdb.org/t/p/w1280'
@@ -245,13 +246,13 @@ export async function findMovies(){
   const theTitle=dataMovie.original_title
   const theDescription=dataMovie.overview
   let shortVersion=''
-  console.log(theTitle)
+  //console.log(theTitle)
 
   let finalArray=[]
   finalArray.push(theTitle)
   finalArray.push(posterPath)
   finalArray.push(dataMovie.id)
-  console.log(finalArray)
+  //console.log(finalArray)
 
 
   console.log(returnArray.splice(1,5))
