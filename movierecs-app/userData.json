@@ -1,5 +1,5 @@
 {
-  "logged_in_user": null,
+  "logged_in_user": "newuser1",
   "users": [
     {
       "id": 1001,
@@ -476,6 +476,49 @@
           "rating": 10,
           "userid": 1004,
           "timestamp": 1765491900
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "username": "newuser1",
+      "password": "password",
+      "ratings": [
+        {
+          "movieid": 24428,
+          "rating": 10,
+          "userid": 1005,
+          "timestamp": 1765504833
+        },
+        {
+          "movieid": 99861,
+          "rating": 6,
+          "userid": 1005,
+          "timestamp": 1765504836
+        },
+        {
+          "movieid": 238,
+          "rating": 10,
+          "userid": 1005,
+          "timestamp": 1765504841
+        },
+        {
+          "movieid": 240,
+          "rating": 10,
+          "userid": 1005,
+          "timestamp": 1765504842
+        },
+        {
+          "movieid": 11036,
+          "rating": 4,
+          "userid": 1005,
+          "timestamp": 1765504849
+        },
+        {
+          "movieid": 269149,
+          "rating": 9,
+          "userid": 1005,
+          "timestamp": 1765504855
         }
       ]
     }

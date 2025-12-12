@@ -56,9 +56,9 @@ export async function CarouselParams() {
     let listIds= await findMovies()
     
     console.log(listIds)
-    let flag=listIds.pop() - 1
-    let flag1=(flag*2)+1
-    let flag2=(flag*2+1)+1
+    //let flag=listIds.pop() - 1
+    //let flag1=(flag*2)+1
+    //let flag2=(flag*2+1)+1
 
 
     const similarMovies = await Promise.all(
