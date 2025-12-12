@@ -37,8 +37,9 @@ For the full model, rac3, called in first user carousel, need to install all the
 * pip3 install datasets
 * pip3 install evaluate
 
-for hybrid model, make sure saved_transformers folder is in rac3. If not or it doesn't work, install
-from this shared onedrive and place locally:
+for hybrid model, make sure saved_transformers folder is in rac3. If not or it doesn't work, install file
+from this shared onedrive and place locally in saved_transformers folder:
+https://drive.google.com/file/d/1be4ZAGphTkx5Us4Z_2lFbvTuMdGunfi9/view?usp=sharing
 
 rac2 is lightweight recommender from second carousel, it should work as all dependencies are in github
 
